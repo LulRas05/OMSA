@@ -1,0 +1,33 @@
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+
+# Entorno virtual
+venv/
+ENV/
+env/
+
+# =====================
+# Archivos de entorno
+# =====================
+.env
+*.env
+
+# =====================
+# Django
+# =====================
+db.sqlite3
+*.sqlite3
+/media/
+static/
+
+# =====================
+# IDE / editores
+# =====================
+.vscode/
+.idea/
