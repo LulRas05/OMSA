@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100dvh;
+    font-family: Arial, sans-serif;
+}
+
+aside {
+    width: 300px;
+    background: #f5f5f5;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 9px #4448;
+    /*
+    padding: 20px;
+    */
+}
+
+.aside__top {
+    width: 100%;
+    padding: 20px 20px 0 5px;
+    /*
+    border-bottom: 2px solid #444;
+    */
+}
+
+aside h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#search-box {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+}
+
+#lista-rutas {
+    list-style: none;
+}
+
+#lista-rutas li {
+    white-space: pre-line;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#lista-rutas li:hover {
+    background-color: #7773;
+}
+
+#lista-rutas li:active {
+    transform: scale(0.9);
+}
+
+#lista-rutas li:last-child {
+    border-bottom: none;
+}
+
+
+
+main#map {
+    flex-grow: 1;
+}

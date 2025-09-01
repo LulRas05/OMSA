@@ -1,0 +1,71 @@
+[
+    {
+      "model": "omsa.ruta",
+      "pk": 1,
+      "fields": {
+        "nombre": "Ruta Av. Winston Churchill",
+        "origen": "Centro de los Héroes",
+        "destino": "Ave. John F. Kennedy",
+        "codigo": "RT-CHURCHILL",
+        "activa": true
+      }
+    },
+    {
+      "model": "omsa.parada",
+      "pk": 1,
+      "fields": {
+        "ruta": 1,
+        "nombre": "Centro de los Héroes (INTRANT)",
+        "orden": 1,
+        "lat": 18.466430,
+        "lon": -69.911980
+      }
+    },
+    {
+      "model": "omsa.parada",
+      "pk": 2,
+      "fields": {
+        "ruta": 1,
+        "nombre": "Parada Av. 27 de Febrero",
+        "orden": 2,
+        "lat": 18.473730,
+        "lon": -69.930850
+      }
+    },
+    {
+      "model": "omsa.parada",
+      "pk": 3,
+      "fields": {
+        "ruta": 1,
+        "nombre": "Parada Blue Mall",
+        "orden": 3,
+        "lat": 18.476750,
+        "lon": -69.937480
+      }
+    },
+    {
+      "model": "omsa.parada",
+      "pk": 4,
+      "fields": {
+        "ruta": 1,
+        "nombre": "Parada John F. Kennedy",
+        "orden": 4,
+        "lat": 18.479990,
+        "lon": -69.944870
+      }
+    },
+    {
+      "model": "omsa.autobus",
+      "pk": 1,
+      "fields": {
+        "placa": "OMSA-CH01",
+        "modelo": "Mercedes Benz City",
+        "color": "Verde",
+        "ruta": 1,
+        "activo": true,
+        "foto": ""
+      }
+    }
+  ]
+  
+  
