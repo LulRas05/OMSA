@@ -8,7 +8,7 @@ class RutaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ParadaSerializer(serializers.ModelSerializer):
-    ruta = RutaSerializer(read_only=True)
+    ruta = serializers.IntegerField(source= '_order', read_only = True)
     class Meta:
         model = Parada
         fields = '__all__'
@@ -24,9 +24,9 @@ class RutaPublicSerializer(serializers.ModelSerializer):
         fields = ["codigo", "nombre", "origen", "destino", "activa"]
 
 class ParadaPublicSerializer(serializers.ModelSerializer):
-    ruta_codigo = serializers.CharField(source="ruta.codigo", read_only=True)
+    orden = serializers.IntegerField(source="_order", read_only=True)
 
     class Meta:
         model = Parada
-        fields = ["id", "ruta_codigo", "nombre", "orden", "lat", "lon"]
+        fields = ["id", "nombre", "lat", "lon", "orden"]
 

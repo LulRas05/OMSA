@@ -13,6 +13,5 @@ urlpatterns = [
     path("api/public/rutas/", RutasPublicAPIView.as_view(), name="rutas_public"),
     path("api/public/paradas/", ParadasPorRutasAPIView.as_view(), name="paradas_por_ruta"),
     path("api/public/paradas/buscar/", BuscarParadasAPIView.as_view(), name="paradas_buscar"),
-
     path("", user_home, name="home"),
 ]

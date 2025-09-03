@@ -1,0 +1,2884 @@
+[
+{
+    "model": "omsa.ruta",
+    "pk": 5,
+    "fields": {
+        "nombre": "Corredor Charles de Gaulle",
+        "origen": "Av. Hipica",
+        "destino": "Av. Charles de Gaulle",
+        "codigo": "RT-CHARLES-GAULLE",
+        "activa": true
+    }
+},
+{
+    "model": "omsa.ruta",
+    "pk": 6,
+    "fields": {
+        "nombre": "Corredor 27 de Febrero",
+        "origen": "Las Caobas",
+        "destino": "Hipódromo",
+        "codigo": "RT-27-FEB",
+        "activa": true
+    }
+},
+{
+    "model": "omsa.ruta",
+    "pk": 7,
+    "fields": {
+        "nombre": "Corredor Abraham Lincoln",
+        "origen": "Lincoln",
+        "destino": "Lincoln",
+        "codigo": "RT-LINCOLN",
+        "activa": true
+    }
+},
+{
+    "model": "omsa.ruta",
+    "pk": 8,
+    "fields": {
+        "nombre": "Corredor Naco",
+        "origen": "Autopista Duarte con Av. Luperon",
+        "destino": "Unknown",
+        "codigo": "RT-NACO",
+        "activa": true
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 1,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hípica, Hipodromo",
+        "lat": 18.47997,
+        "lon": -69.778,
+        "_order": 0
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 2,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hípica, La Plaza O",
+        "lat": 18.478235,
+        "lon": -69.778134,
+        "_order": 1
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 3,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hípica, Bio Verde O",
+        "lat": 18.473402,
+        "lon": -69.778419,
+        "_order": 2
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 4,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hípica, Chicharrones O",
+        "lat": 18.470125,
+        "lon": -69.778585,
+        "_order": 3
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 5,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas Garrido N",
+        "lat": 18.46607,
+        "lon": -69.781567,
+        "_order": 4
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 6,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, Los Molinos N",
+        "lat": 18.466467,
+        "lon": -69.787753,
+        "_order": 5
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 7,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, Ferr Yamelis  N",
+        "lat": 18.466487,
+        "lon": -69.790885,
+        "_order": 6
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 8,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, Los Furgones N",
+        "lat": 18.466528,
+        "lon": -69.793101,
+        "_order": 7
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 9,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, La Llave N",
+        "lat": 18.465968,
+        "lon": -69.797301,
+        "_order": 8
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 10,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, Parada 10  N",
+        "lat": 18.465088,
+        "lon": -69.80207,
+        "_order": 9
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 11,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, Lula N",
+        "lat": 18.464991,
+        "lon": -69.807217,
+        "_order": 10
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 12,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, Bravo N",
+        "lat": 18.464752,
+        "lon": -69.810353,
+        "_order": 11
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 13,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, Bomba Nativa N",
+        "lat": 18.465185,
+        "lon": -69.817171,
+        "_order": 12
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 14,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, SUper Ole N",
+        "lat": 18.465434,
+        "lon": -69.819392,
+        "_order": 13
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 15,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Marginal Las Américas, Parada 17",
+        "lat": 18.466238,
+        "lon": -69.822519,
+        "_order": 14
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 16,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Las Américas E",
+        "lat": 18.473137,
+        "lon": -69.829284,
+        "_order": 15
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 17,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, FCIA Sanchez E",
+        "lat": 18.477187,
+        "lon": -69.828275,
+        "_order": 16
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 18,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Los Camiones E",
+        "lat": 18.481051,
+        "lon": -69.827369,
+        "_order": 17
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 19,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Av. Ecológica E",
+        "lat": 18.484068,
+        "lon": -69.82665,
+        "_order": 18
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 20,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Super Lama E",
+        "lat": 18.488235,
+        "lon": -69.825633,
+        "_order": 19
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 21,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, C.N.D E",
+        "lat": 18.490252,
+        "lon": -69.825121,
+        "_order": 20
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 22,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, PZA Avalon E",
+        "lat": 18.494526,
+        "lon": -69.824102,
+        "_order": 21
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 23,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Chicharrones E",
+        "lat": 18.49649,
+        "lon": -69.823651,
+        "_order": 22
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 24,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Andujar E",
+        "lat": 18.498601,
+        "lon": -69.823533,
+        "_order": 23
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 25,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle,, El Swing E",
+        "lat": 18.500219,
+        "lon": -69.824268,
+        "_order": 24
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 26,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Villa Carmen E",
+        "lat": 18.503484,
+        "lon": -69.826087,
+        "_order": 25
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 27,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Super 100",
+        "lat": 18.505687,
+        "lon": -69.827283,
+        "_order": 26
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 28,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, El Encuentro E",
+        "lat": 18.508419,
+        "lon": -69.828785,
+        "_order": 27
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 29,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Comercial E",
+        "lat": 18.510688,
+        "lon": -69.830035,
+        "_order": 28
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 30,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Trinitarios E",
+        "lat": 18.514518,
+        "lon": -69.83217,
+        "_order": 29
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 31,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, El Nueve E",
+        "lat": 18.518821,
+        "lon": -69.834487,
+        "_order": 30
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 32,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, La Fiscalia E",
+        "lat": 18.52167,
+        "lon": -69.836118,
+        "_order": 31
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 33,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Tato Auto",
+        "lat": 18.524137,
+        "lon": -69.837534,
+        "_order": 32
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 34,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, La Sirena E",
+        "lat": 18.526335,
+        "lon": -69.839027,
+        "_order": 33
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 35,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Credigas E",
+        "lat": 18.52905,
+        "lon": -69.841837,
+        "_order": 34
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 36,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Propagas E",
+        "lat": 18.532534,
+        "lon": -69.846037,
+        "_order": 35
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 37,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, ESSO E",
+        "lat": 18.541984,
+        "lon": -69.856954,
+        "_order": 36
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 38,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, Teleferico N",
+        "lat": 18.542904,
+        "lon": -69.859548,
+        "_order": 37
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 39,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, Peatonal N",
+        "lat": 18.543002,
+        "lon": -69.862522,
+        "_order": 38
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 40,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, El Pollo N",
+        "lat": 18.544985,
+        "lon": -69.865086,
+        "_order": 39
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 41,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, Los Escalones E",
+        "lat": 18.545834,
+        "lon": -69.8678,
+        "_order": 40
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 42,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, Boulevard E",
+        "lat": 18.545255,
+        "lon": -69.870783,
+        "_order": 41
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 43,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Tropigas E",
+        "lat": 18.546155,
+        "lon": -69.877102,
+        "_order": 42
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 44,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, Pollo Cibao E",
+        "lat": 18.546872,
+        "lon": -69.879736,
+        "_order": 43
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 45,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, Promese CAL E",
+        "lat": 18.548637,
+        "lon": -69.88517,
+        "_order": 44
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 46,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, IMP El Gran E",
+        "lat": 18.547604,
+        "lon": -69.889805,
+        "_order": 45
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 47,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, E.S Total E",
+        "lat": 18.546104,
+        "lon": -69.894134,
+        "_order": 46
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 48,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Jacobo Majluta, La Sirena N",
+        "lat": 18.545555,
+        "lon": -69.898485,
+        "_order": 47
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 49,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hermanas Mirabal DOGOUT",
+        "lat": 18.546892,
+        "lon": -69.901274,
+        "_order": 48
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 50,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Turinan",
+        "lat": 18.545453,
+        "lon": -69.901655,
+        "_order": 49
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 51,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, La Sirena",
+        "lat": 18.545372,
+        "lon": -69.898705,
+        "_order": 50
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 52,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, E.S Total O",
+        "lat": 18.545717,
+        "lon": -69.894483,
+        "_order": 51
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 53,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, IMP El Grande",
+        "lat": 18.547533,
+        "lon": -69.889387,
+        "_order": 52
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 54,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Promese CAL",
+        "lat": 18.548469,
+        "lon": -69.885567,
+        "_order": 53
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 55,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Pollo Cibao O",
+        "lat": 18.546572,
+        "lon": -69.87927,
+        "_order": 54
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 56,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Tropigas O",
+        "lat": 18.545901,
+        "lon": -69.876968,
+        "_order": 55
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 57,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Boulevard O",
+        "lat": 18.545117,
+        "lon": -69.870585,
+        "_order": 56
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 58,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Los Escalones O",
+        "lat": 18.5456,
+        "lon": -69.867972,
+        "_order": 57
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 59,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, El Peatonal",
+        "lat": 18.542869,
+        "lon": -69.862769,
+        "_order": 58
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 60,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, El Teleferico",
+        "lat": 18.542686,
+        "lon": -69.859153,
+        "_order": 59
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 61,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Propagas O",
+        "lat": 18.541984,
+        "lon": -69.856954,
+        "_order": 60
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 62,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Credigas O",
+        "lat": 18.528837,
+        "lon": -69.841885,
+        "_order": 61
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 63,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, La Sirena O",
+        "lat": 18.526085,
+        "lon": -69.839053,
+        "_order": 62
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 64,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Tato Auto O",
+        "lat": 18.523918,
+        "lon": -69.837604,
+        "_order": 63
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 65,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, La Fiscalia O",
+        "lat": 18.521502,
+        "lon": -69.836188,
+        "_order": 64
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 66,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, El nueve O",
+        "lat": 18.518633,
+        "lon": -69.8346,
+        "_order": 65
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 67,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Trinitarios O",
+        "lat": 18.516863,
+        "lon": -69.833651,
+        "_order": 66
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 68,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, L&R Comercial O",
+        "lat": 18.510484,
+        "lon": -69.830083,
+        "_order": 67
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 69,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, El Encuentro",
+        "lat": 18.508485,
+        "lon": -69.829005,
+        "_order": 68
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 70,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Super 100",
+        "lat": 18.505607,
+        "lon": -69.827412,
+        "_order": 69
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 71,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Villa Carmen",
+        "lat": 18.503319,
+        "lon": -69.826151,
+        "_order": 70
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 72,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, El Swing",
+        "lat": 18.500164,
+        "lon": -69.824407,
+        "_order": 71
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 73,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Andujar O",
+        "lat": 18.498451,
+        "lon": -69.823635,
+        "_order": 72
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 74,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Plaza Avalon",
+        "lat": 18.494302,
+        "lon": -69.824319,
+        "_order": 73
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 75,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, C.N.D",
+        "lat": 18.490186,
+        "lon": -69.825467,
+        "_order": 74
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 76,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Super Lama",
+        "lat": 18.488602,
+        "lon": -69.825851,
+        "_order": 75
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 77,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Av. Ecológica",
+        "lat": 18.483834,
+        "lon": -69.826934,
+        "_order": 76
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 78,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, Los camiones",
+        "lat": 18.480657,
+        "lon": -69.827678,
+        "_order": 77
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 79,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle,, FCIA Dra. Sanchez",
+        "lat": 18.477035,
+        "lon": -69.828501,
+        "_order": 78
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 80,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Charles de Gaulle, DIS Las Américas",
+        "lat": 18.472852,
+        "lon": -69.8296,
+        "_order": 79
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 81,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Expreso Las Américas, Puente J Carlos",
+        "lat": 18.469469,
+        "lon": -69.829922,
+        "_order": 80
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 82,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas, Parada 120",
+        "lat": 18.466352,
+        "lon": -69.822868,
+        "_order": 81
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 83,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas, Super Ole S",
+        "lat": 18.465434,
+        "lon": -69.819384,
+        "_order": 82
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 84,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas,  Bomba Nativa S",
+        "lat": 18.46513,
+        "lon": -69.817166,
+        "_order": 83
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 85,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Autopista Las Américas, Bravo S",
+        "lat": 18.464634,
+        "lon": -69.81085,
+        "_order": 84
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 86,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas, LULA S",
+        "lat": 18.464868,
+        "lon": -69.80755,
+        "_order": 85
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 87,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas, Parada 10 S",
+        "lat": 18.465001,
+        "lon": -69.803768,
+        "_order": 86
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 88,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas, El 12 S",
+        "lat": 18.465067,
+        "lon": -69.801583,
+        "_order": 87
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 89,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas, La Llave S",
+        "lat": 18.465804,
+        "lon": -69.797611,
+        "_order": 88
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 90,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas,  Los Furgones S",
+        "lat": 18.466467,
+        "lon": -69.793101,
+        "_order": 89
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 91,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas,  Los Molinos S",
+        "lat": 18.466388,
+        "lon": -69.788234,
+        "_order": 90
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 92,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas,  La Moneda S",
+        "lat": 18.46635,
+        "lon": -69.78515,
+        "_order": 91
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 93,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Marginal Las Américas,  Garrido S",
+        "lat": 18.466151,
+        "lon": -69.7827,
+        "_order": 92
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 94,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hípica, El Elevado E",
+        "lat": 18.466085,
+        "lon": -69.778684,
+        "_order": 93
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 95,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hípica, Bio Verde E",
+        "lat": 18.47345,
+        "lon": -69.778217,
+        "_order": 94
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 96,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hípica, La Placa E",
+        "lat": 18.478067,
+        "lon": -69.777984,
+        "_order": 95
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 97,
+    "fields": {
+        "ruta": 5,
+        "nombre": "Av. Hípica, Hipodromo(C2) E",
+        "lat": 18.479884,
+        "lon": -69.777853,
+        "_order": 96
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 98,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Aut. Duarte",
+        "lat": 18.500308,
+        "lon": -69.999309,
+        "_order": 0
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 99,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Alameda",
+        "lat": 18.495391,
+        "lon": -69.999465,
+        "_order": 1
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 100,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Hojas Anchas",
+        "lat": 18.492506,
+        "lon": -70.000092,
+        "_order": 2
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 101,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Higuey Aguacate",
+        "lat": 18.488584,
+        "lon": -70.000125,
+        "_order": 3
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 102,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Carr. Manoguayabo",
+        "lat": 18.484128,
+        "lon": -69.998214,
+        "_order": 4
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 103,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues de Calle Tercera",
+        "lat": 18.481624,
+        "lon": -69.997389,
+        "_order": 5
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 104,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Carr. Manoguayabo",
+        "lat": 18.476943,
+        "lon": -69.996289,
+        "_order": 6
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 105,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Los Coquitos",
+        "lat": 18.472918,
+        "lon": -69.994454,
+        "_order": 7
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 106,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues C/ Orlando Martinez",
+        "lat": 18.469749,
+        "lon": -69.994835,
+        "_order": 8
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 107,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues C/ Mexico",
+        "lat": 18.46407,
+        "lon": -69.993875,
+        "_order": 9
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 108,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues C/ A",
+        "lat": 18.460028,
+        "lon": -69.989074,
+        "_order": 10
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 109,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues C/ Maria Montez",
+        "lat": 18.457906,
+        "lon": -69.984163,
+        "_order": 11
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 110,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Respaldo 27 de Febrero",
+        "lat": 18.456794,
+        "lon": -69.982889,
+        "_order": 12
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 111,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ H",
+        "lat": 18.450805,
+        "lon": -69.978529,
+        "_order": 13
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 112,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Gregorio Luperon",
+        "lat": 18.449703,
+        "lon": -69.972377,
+        "_order": 14
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 113,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Caonabo",
+        "lat": 18.449736,
+        "lon": -69.967892,
+        "_order": 15
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 114,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ La Plaza",
+        "lat": 18.450578,
+        "lon": -69.964797,
+        "_order": 16
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 115,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Antonio Guzman Fernandez",
+        "lat": 18.451916,
+        "lon": -69.960723,
+        "_order": 17
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 116,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues C/ Primera",
+        "lat": 18.453094,
+        "lon": -69.957936,
+        "_order": 18
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 117,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Nunez de Caceres",
+        "lat": 18.455182,
+        "lon": -69.953462,
+        "_order": 19
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 118,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Carmen Mendoza",
+        "lat": 18.4566,
+        "lon": -69.950453,
+        "_order": 20
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 119,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Fernando Arturo Defillo",
+        "lat": 18.457946,
+        "lon": -69.946698,
+        "_order": 21
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 120,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Centauro",
+        "lat": 18.458806,
+        "lon": -69.944023,
+        "_order": 22
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 121,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Del Rincon",
+        "lat": 18.460338,
+        "lon": -69.940199,
+        "_order": 23
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 122,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo Av. Enrique Jimenez Moya",
+        "lat": 18.462076,
+        "lon": -69.936792,
+        "_order": 24
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 123,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Enrique Jimenez Moya",
+        "lat": 18.463114,
+        "lon": -69.934848,
+        "_order": 25
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 124,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Atalaya",
+        "lat": 18.464767,
+        "lon": -69.931559,
+        "_order": 26
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 125,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Abraham Lincoln",
+        "lat": 18.46596,
+        "lon": -69.929175,
+        "_order": 27
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 126,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Pedro Yapor",
+        "lat": 18.468349,
+        "lon": -69.924427,
+        "_order": 28
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 127,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ La Fronda",
+        "lat": 18.469617,
+        "lon": -69.922555,
+        "_order": 29
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 128,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo Av Ortega Y Gasset",
+        "lat": 18.472084,
+        "lon": -69.919597,
+        "_order": 30
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 129,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo Av. Maximo Gomez",
+        "lat": 18.475826,
+        "lon": -69.914361,
+        "_order": 31
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 130,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ Respaldo 27 de Febrero1",
+        "lat": 18.476158,
+        "lon": -69.912133,
+        "_order": 32
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 131,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues Av. Leopordo Navarro",
+        "lat": 18.475676,
+        "lon": -69.906609,
+        "_order": 33
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 132,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Proximo C/ San Juan Bosco",
+        "lat": 18.476619,
+        "lon": -69.90459,
+        "_order": 34
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 133,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. 27 de Febrero Despues C/ Rocco Cochia",
+        "lat": 18.478327,
+        "lon": -69.901907,
+        "_order": 35
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 134,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Mexico Proximo C/ Abreu",
+        "lat": 18.476724,
+        "lon": -69.895588,
+        "_order": 36
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 135,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Mexico Proximo C/ Padre Miguel",
+        "lat": 18.476734,
+        "lon": -69.892622,
+        "_order": 37
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 136,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Mexico Despues Av. Duarte",
+        "lat": 18.479604,
+        "lon": -69.888319,
+        "_order": 38
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 137,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Espana Despues Av. 25 de Febrero",
+        "lat": 18.482652,
+        "lon": -69.877671,
+        "_order": 39
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 138,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Las Americas Despues Respaldo Las Americas",
+        "lat": 18.485508,
+        "lon": -69.874987,
+        "_order": 40
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 139,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Las Americas Despues de Av. Venezuela",
+        "lat": 18.485058,
+        "lon": -69.869528,
+        "_order": 41
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 140,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Las Americas Despues Av. Sabana Larga",
+        "lat": 18.484788,
+        "lon": -69.865365,
+        "_order": 42
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 141,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Las Americas, Después de calle 11",
+        "lat": 18.484325,
+        "lon": -69.85977,
+        "_order": 43
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 142,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Las Americas Despues C/ Mirasur",
+        "lat": 18.484325,
+        "lon": -69.85977,
+        "_order": 44
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 143,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Las Americas Proximo Av. 25 de Febrero",
+        "lat": 18.484254,
+        "lon": -69.857061,
+        "_order": 45
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 144,
+    "fields": {
+        "ruta": 6,
+        "nombre": "C/ Marginal Las Americas Despues C/ 25 de Febrero",
+        "lat": 18.483944,
+        "lon": -69.850559,
+        "_order": 46
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 145,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Marginal Las Americas Proximo Av Bulevard Del Faro",
+        "lat": 18.48169,
+        "lon": -69.844406,
+        "_order": 47
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 146,
+    "fields": {
+        "ruta": 6,
+        "nombre": "C/ Marginal Las Americas Despues C/ Jupiter",
+        "lat": 18.478709,
+        "lon": -69.837325,
+        "_order": 48
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 147,
+    "fields": {
+        "ruta": 6,
+        "nombre": "C/ Marginal Las Americas Proximo C/ C",
+        "lat": 18.476129,
+        "lon": -69.835448,
+        "_order": 49
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 148,
+    "fields": {
+        "ruta": 6,
+        "nombre": "C/11 Proximo C/ 2",
+        "lat": 18.469535,
+        "lon": -69.832873,
+        "_order": 50
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 149,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Espana Proximo Aut. Las Americas",
+        "lat": 18.46868,
+        "lon": -69.829397,
+        "_order": 51
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 150,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Calle MARGINAL Av. Las Americas Proximoimo A C/ Tercera",
+        "lat": 18.466398,
+        "lon": -69.822901,
+        "_order": 52
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 151,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Despues C/ Miramar Nte.",
+        "lat": 18.465434,
+        "lon": -69.819505,
+        "_order": 53
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 152,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Proximo C/ Este",
+        "lat": 18.465113,
+        "lon": -69.816635,
+        "_order": 54
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 153,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Proximo C/ Central",
+        "lat": 18.464884,
+        "lon": -69.813289,
+        "_order": 55
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 154,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Proximo C/ Res. Lisset",
+        "lat": 18.464683,
+        "lon": -69.810825,
+        "_order": 56
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 155,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Despues C/ Eduardo Brito",
+        "lat": 18.464868,
+        "lon": -69.80755,
+        "_order": 57
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 156,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Proximo C/ Manolo Tavarez Justo",
+        "lat": 18.464975,
+        "lon": -69.803235,
+        "_order": 58
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 157,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Proximo C/ El Seibo",
+        "lat": 18.465032,
+        "lon": -69.801555,
+        "_order": 59
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 158,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Despues C/ Fausto Rodriguez",
+        "lat": 18.465744,
+        "lon": -69.797832,
+        "_order": 60
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 159,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Despues C/ El Eden",
+        "lat": 18.466451,
+        "lon": -69.793715,
+        "_order": 61
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 160,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Despues C/ Pdte. Camano",
+        "lat": 18.466406,
+        "lon": -69.791172,
+        "_order": 62
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 161,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Calle MARGINAL Av. Las Americas Despues C/ Primera",
+        "lat": 18.466357,
+        "lon": -69.788123,
+        "_order": 63
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 162,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Despues C/ Buenos Aires",
+        "lat": 18.466319,
+        "lon": -69.785199,
+        "_order": 64
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 163,
+    "fields": {
+        "ruta": 6,
+        "nombre": "MARGINAL Av. Las Americas Proximo C/ Quinta",
+        "lat": 18.466126,
+        "lon": -69.782678,
+        "_order": 65
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 164,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Hipica Despues MARGINAL Av. Las Americas",
+        "lat": 18.466187,
+        "lon": -69.77863,
+        "_order": 66
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 165,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Hipica Despues C/ Daniel Brewer",
+        "lat": 18.4704,
+        "lon": -69.778397,
+        "_order": 67
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 166,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Hipica Despues C/ 5to. Centenario",
+        "lat": 18.47822,
+        "lon": -69.77785,
+        "_order": 68
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 167,
+    "fields": {
+        "ruta": 6,
+        "nombre": "Av. Hipica Proximo C/ Hipodromo V Centenario",
+        "lat": 18.479462,
+        "lon": -69.777845,
+        "_order": 69
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 168,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Carwash Los Rios",
+        "lat": 18.493458,
+        "lon": -69.965293,
+        "_order": 0
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 169,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Plaza Rey",
+        "lat": 18.496322,
+        "lon": -69.963652,
+        "_order": 1
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 170,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Peluqueria Bomba",
+        "lat": 18.500102,
+        "lon": -69.961721,
+        "_order": 2
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 171,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Los Conquis O",
+        "lat": 18.49838,
+        "lon": -69.958881,
+        "_order": 3
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 172,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Paseo Camu O",
+        "lat": 18.493086,
+        "lon": -69.959334,
+        "_order": 4
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 173,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Ent Botanico",
+        "lat": 18.490736,
+        "lon": -69.959521,
+        "_order": 5
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 174,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Jardin Bot 1",
+        "lat": 18.488076,
+        "lon": -69.957868,
+        "_order": 6
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 175,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Jardin Bot 2",
+        "lat": 18.489268,
+        "lon": -69.95162,
+        "_order": 7
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 176,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Macao",
+        "lat": 18.488685,
+        "lon": -69.945837,
+        "_order": 8
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 177,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Auto Marina",
+        "lat": 18.486167,
+        "lon": -69.941937,
+        "_order": 9
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 178,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, SD Motors",
+        "lat": 18.482886,
+        "lon": -69.940086,
+        "_order": 10
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 179,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Mapfre BHD",
+        "lat": 18.478668,
+        "lon": -69.937736,
+        "_order": 11
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 180,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Plaza Andalucia",
+        "lat": 18.475371,
+        "lon": -69.935886,
+        "_order": 12
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 181,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Lincolnazo",
+        "lat": 18.472069,
+        "lon": -69.934019,
+        "_order": 13
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 182,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Bolera",
+        "lat": 18.468838,
+        "lon": -69.932238,
+        "_order": 14
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 183,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Plaza Lincoln",
+        "lat": 18.46495,
+        "lon": -69.930071,
+        "_order": 15
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 184,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Banco Vimenca",
+        "lat": 18.462488,
+        "lon": -69.928671,
+        "_order": 16
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 185,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Cerrajeria Lara",
+        "lat": 18.457404,
+        "lon": -69.925822,
+        "_order": 17
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 186,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Nestle",
+        "lat": 18.456218,
+        "lon": -69.92515,
+        "_order": 18
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 187,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, La Cadena",
+        "lat": 18.45495,
+        "lon": -69.92565,
+        "_order": 19
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 188,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Interior A",
+        "lat": 18.453579,
+        "lon": -69.928048,
+        "_order": 20
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 189,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, L Municipal DOM",
+        "lat": 18.452551,
+        "lon": -69.928681,
+        "_order": 21
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 190,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Minist Trabajo",
+        "lat": 18.449919,
+        "lon": -69.926983,
+        "_order": 22
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 191,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Ofic Estado Civil",
+        "lat": 18.450718,
+        "lon": -69.924535,
+        "_order": 23
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 192,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Hotel Hispaniola",
+        "lat": 18.454534,
+        "lon": -69.924036,
+        "_order": 24
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 193,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, DOM Americano",
+        "lat": 18.455901,
+        "lon": -69.924685,
+        "_order": 25
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 194,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Parque Galicia",
+        "lat": 18.457901,
+        "lon": -69.925852,
+        "_order": 26
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 195,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Vimenca",
+        "lat": 18.460651,
+        "lon": -69.927402,
+        "_order": 27
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 196,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Casa Cuesta",
+        "lat": 18.465067,
+        "lon": -69.929851,
+        "_order": 28
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 197,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Parque la Lira",
+        "lat": 18.468884,
+        "lon": -69.931983,
+        "_order": 29
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 198,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, ARS Yunen",
+        "lat": 18.472234,
+        "lon": -69.933869,
+        "_order": 30
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 199,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Bodega Lincoln",
+        "lat": 18.476218,
+        "lon": -69.936068,
+        "_order": 31
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 200,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Aero Ambulancia",
+        "lat": 18.478851,
+        "lon": -69.937535,
+        "_order": 32
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 201,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Agora Mall",
+        "lat": 18.482552,
+        "lon": -69.939635,
+        "_order": 33
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 202,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Diamond Mall",
+        "lat": 18.486185,
+        "lon": -69.941652,
+        "_order": 34
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 203,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Erick L Ekman",
+        "lat": 18.488385,
+        "lon": -69.944351,
+        "_order": 35
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 204,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, REP Argentina",
+        "lat": 18.4897,
+        "lon": -69.948334,
+        "_order": 36
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 205,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Calle Petunia",
+        "lat": 18.4894,
+        "lon": -69.95232,
+        "_order": 37
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 206,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Jardin Bot Rotonda",
+        "lat": 18.488284,
+        "lon": -69.958035,
+        "_order": 38
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 207,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Entrada Bot E",
+        "lat": 18.490601,
+        "lon": -69.959368,
+        "_order": 39
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 208,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Calle Camu E",
+        "lat": 18.494602,
+        "lon": -69.959052,
+        "_order": 40
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 209,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Los Conquis E",
+        "lat": 18.498435,
+        "lon": -69.958751,
+        "_order": 41
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 210,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Colmado Peralta",
+        "lat": 18.499852,
+        "lon": -69.962284,
+        "_order": 42
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 211,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Banca Mariano",
+        "lat": 18.497451,
+        "lon": -69.963601,
+        "_order": 43
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 212,
+    "fields": {
+        "ruta": 7,
+        "nombre": "Av. Lincoln, Terminal OMSA",
+        "lat": 18.493134,
+        "lon": -69.966052,
+        "_order": 44
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 213,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Autopista Duarte Con Av. Luperon",
+        "lat": 18.479131,
+        "lon": -69.968941,
+        "_order": 0
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 214,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Kennedy Con Av. Nunes De Caceres",
+        "lat": 18.47967,
+        "lon": -69.963121,
+        "_order": 1
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 215,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Nunes De Caceres Con Calle Timoteo Ogando",
+        "lat": 18.478001,
+        "lon": -69.962134,
+        "_order": 2
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 216,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Nunes De Caceres, Antes De Calle Font Bernard",
+        "lat": 18.473694,
+        "lon": -69.961147,
+        "_order": 3
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 217,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Nunes De Caceres, Antes Calle Olof Palmer",
+        "lat": 18.470619,
+        "lon": -69.960439,
+        "_order": 4
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 218,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Nunes De Caceres Con Av. Gustavo Mejia Ricart",
+        "lat": 18.46567,
+        "lon": -69.959095,
+        "_order": 5
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 219,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart, Con Calle Bellas Artes",
+        "lat": 18.465001,
+        "lon": -69.957842,
+        "_order": 6
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 220,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart, Con Calle Winston Arnaud",
+        "lat": 18.465889,
+        "lon": -69.955275,
+        "_order": 7
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 221,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart, Después de Calle Mencia",
+        "lat": 18.467535,
+        "lon": -69.950541,
+        "_order": 8
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 222,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Con Calle Maximo Blonda",
+        "lat": 18.469464,
+        "lon": -69.946024,
+        "_order": 9
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 223,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Con Calle Virgilio Diaz",
+        "lat": 18.470708,
+        "lon": -69.943613,
+        "_order": 10
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 224,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Con Calle Freddy Prestol",
+        "lat": 18.472257,
+        "lon": -69.940542,
+        "_order": 11
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 225,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Con Av. Abraham Lincoln",
+        "lat": 18.474363,
+        "lon": -69.936258,
+        "_order": 12
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 226,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Con Av. Lope De Vega",
+        "lat": 18.475447,
+        "lon": -69.932106,
+        "_order": 13
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 227,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Con Calle Manuel De Jesus Castro",
+        "lat": 18.475328,
+        "lon": -69.929011,
+        "_order": 14
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 228,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Tiradentes Con Calle Fantino Falco",
+        "lat": 18.476996,
+        "lon": -69.927198,
+        "_order": 15
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 229,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Tiradentes Con Calle Dr. Heriberto Pieter",
+        "lat": 18.481929,
+        "lon": -69.92884,
+        "_order": 16
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 230,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Tiradentes Con Calle Euclides Morillo",
+        "lat": 18.487958,
+        "lon": -69.929412,
+        "_order": 17
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 231,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Tiradentes Con Calle Paseo Las Palmas",
+        "lat": 18.490789,
+        "lon": -69.92966,
+        "_order": 18
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 232,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Pedro Livio Cedeno Con Av. Tiradentes",
+        "lat": 18.492694,
+        "lon": -69.92962,
+        "_order": 19
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 233,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Pedro Livio Cedeno Con Calle 39",
+        "lat": 18.493554,
+        "lon": -69.923185,
+        "_order": 20
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 234,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Ortega Y Gasset Con Calle Americo Lugo",
+        "lat": 18.490359,
+        "lon": -69.921445,
+        "_order": 21
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 235,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Ortega Y Gasset Con Calle Mauricio Baez",
+        "lat": 18.487983,
+        "lon": -69.921176,
+        "_order": 22
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 236,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Calle Francisco Villaespesa Con Calle 14 De Junio",
+        "lat": 18.487078,
+        "lon": -69.9163,
+        "_order": 23
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 237,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Maximo Gomez Con Calle Pena Batlle",
+        "lat": 18.486813,
+        "lon": -69.914637,
+        "_order": 24
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 238,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. San Martin Con Calle Ramon Caceres",
+        "lat": 18.48489,
+        "lon": -69.91711,
+        "_order": 25
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 239,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. San Martin Con Av. Ortega Y Gasset",
+        "lat": 18.485185,
+        "lon": -69.920399,
+        "_order": 26
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 240,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. San Martin Con Av. Tiradentes",
+        "lat": 18.484076,
+        "lon": -69.928472,
+        "_order": 27
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 241,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Tiradentes Con John F. Kennedy",
+        "lat": 18.482148,
+        "lon": -69.929035,
+        "_order": 28
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 242,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Tiradentes Con Calle Pdte Gonzales",
+        "lat": 18.477467,
+        "lon": -69.927555,
+        "_order": 29
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 243,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Tiradentes Con Av. Roberto Pastoriza",
+        "lat": 18.471372,
+        "lon": -69.925178,
+        "_order": 30
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 244,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Roberto Pastoriza Con Calle Manuel Henriquez",
+        "lat": 18.470095,
+        "lon": -69.927818,
+        "_order": 31
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 245,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Roberto Pastoriza Con Av. Abraham Lincoln",
+        "lat": 18.468919,
+        "lon": -69.932699,
+        "_order": 32
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 246,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Roberto Pastoriza Con Calle Manuel De Jesus Troncoso",
+        "lat": 18.466696,
+        "lon": -69.93705,
+        "_order": 33
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 247,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Roberto Pastoriza Con Calle Padre Emiliano Tadif",
+        "lat": 18.464701,
+        "lon": -69.940928,
+        "_order": 34
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 248,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Calle Jose Tapia Brea Con Calle 6A",
+        "lat": 18.462325,
+        "lon": -69.945783,
+        "_order": 35
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 249,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Calle Jose Tapia Brea Con Calle Rafael Augusto Sanchez",
+        "lat": 18.466065,
+        "lon": -69.947178,
+        "_order": 36
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 250,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Antes De Calle Mencia",
+        "lat": 18.467561,
+        "lon": -69.950756,
+        "_order": 37
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 251,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Con Lorenzo",
+        "lat": 18.465851,
+        "lon": -69.955702,
+        "_order": 38
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 252,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Gustavo Mejia Ricart Con Av. Nunes De Caceres",
+        "lat": 18.464996,
+        "lon": -69.95818,
+        "_order": 39
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 253,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Nunes De Caceres Despues Calle Olof Palmer",
+        "lat": 18.465571,
+        "lon": -69.958813,
+        "_order": 40
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 254,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Nunes De Caceres Despuesues De Calle Font Bernard",
+        "lat": 18.473402,
+        "lon": -69.960841,
+        "_order": 41
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 255,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. Nunes De Caceres Con Calle Felix Mota",
+        "lat": 18.476068,
+        "lon": -69.961463,
+        "_order": 42
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 256,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. John F. Kennedy Con Calle Yanay",
+        "lat": 18.480123,
+        "lon": -69.963153,
+        "_order": 43
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 257,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Av. John F. Kennedy Con Av. Luperon",
+        "lat": 18.479207,
+        "lon": -69.969167,
+        "_order": 44
+    }
+},
+{
+    "model": "omsa.parada",
+    "pk": 258,
+    "fields": {
+        "ruta": 8,
+        "nombre": "Autopsita Duarte Con Calle 10",
+        "lat": 18.482611,
+        "lon": -69.97415,
+        "_order": 45
+    }
+}
+]

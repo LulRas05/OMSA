@@ -30,16 +30,20 @@ class RutasPublicAPIView(APIView):
 
 class ParadasPorRutasAPIView(APIView):
     def get(self, request):
-        codigo = request.GET.get("codigo")
+        codigo = request.query_params.get('codigo')
         if not codigo:
             return Response({"detail": "Falta parámetro 'codigo'."}, status=status.HTTP_400_BAD_REQUEST)
 
-        # ⬇⬇⬇ CAMBIO: active -> activa
         ruta = Ruta.objects.filter(codigo=codigo, activa=True).first()
         if not ruta:
             return Response({"detail": "Ruta no encontrada o inactiva."}, status=status.HTTP_404_NOT_FOUND)
 
-        paradas = Parada.objects.filter(ruta=ruta).order_by("orden")
+        paradas = (
+            Parada.objects
+            .filter(ruta=ruta)
+            .order_by('_order', 'id')
+            .select_related('ruta')
+        )
         data = ParadaPublicSerializer(paradas, many=True).data
         return Response(data, status=status.HTTP_200_OK)
     

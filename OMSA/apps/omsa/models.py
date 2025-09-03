@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
     
 class Ruta(models.Model):
@@ -15,14 +16,22 @@ class Parada(models.Model):
     ruta = models.ForeignKey(Ruta, on_delete=models.CASCADE, related_name='paradas')
     nombre = models.CharField(max_length=100)
     orden = models.PositiveIntegerField()
-    lat = models.FloatField()
-    lon = models.FloatField()
+    lat = models.FloatField(
+        validators=[MinValueValidator(-90.0), MaxValueValidator(90.0)]
+    )
+    lon = models.FloatField(
+        validators=[MinValueValidator(-180.0), MaxValueValidator(180.0)]
+    )
 
     class Meta:
-        ordering = ['orden']
+        order_with_respect_to = 'ruta'
 
     def __str__(self):
-        return f"{self.nombre} - {self.ruta.codigo}"
+        return f"{self.nombre} - (orden {self.ruta.codigo})"
+    
+    @property
+    def orden(self) -> int:
+        return getattr(self, '_order', None)
 
 class Autobus(models.Model):
     placa = models.CharField(max_length=20, unique=True)
