@@ -41,6 +41,10 @@ class Autobus(models.Model):
     activo = models.BooleanField(default=True)
     foto = models.ImageField(upload_to='autobuses/', null=True, blank=True)
 
+    class Meta:
+        verbose_name = "Autobús"
+        verbose_name_plural = "Autobuses"
+
     def __str__(self):
         return f"{self.placa} - {self.modelo}"
     

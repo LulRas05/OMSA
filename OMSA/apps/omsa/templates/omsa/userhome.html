@@ -1,34 +1,95 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa con Aside</title>
-    <script src="../../static/omsa/usermap.js" defer></script>
-    <link rel="stylesheet" href="../../static/omsa/userstyle.css">
+    <link rel="stylesheet" href="{% static 'omsa/userstyle.css' %}?v=20250915-8">
+    <script src="{% static 'omsa/usermap.js' %}?v=20250915-geo27" defer></script>
 </head>
 <body>
-    <aside>
-        <div class="aside__top">
-            <h2>Buscador de lugares</h2>
-            <input id="search-box" type="text" placeholder="Escribe un lugar..." />
+    <!-- Barra superior (Omnibox + selector de modo) -->
+    <header class="topbar">
+        <div class="topbar__inner">
+            <div class="omnibox">
+                <div class="omnibox__brand">
+                    <img src="{% static 'images/LOGO-OMSA.png' %}" alt="OMSA logo">
+                </div>
+                <div class="omnibox__input">
+                    <input class="input" id="search-box" type="text" placeholder="Buscar destino, ruta o parada…" />
+                </div>
+            </div>
+            <!-- Mini-card de destino -->
+            <div id="destino-card" class="destino-card" hidden>
+                <div class="destino-card__title" id="destino-title">Destino</div>
+                <div class="destino-card__addr" id="destino-addr"></div>
+                <div class="destino-card__actions">
+                    <button id="btn-go" class="btn btn--primary">Ir</button>
+                    <button id="btn-change" class="btn">Cambiar</button>
+                </div>
+            </div>
         </div>
-        <ul id="lista-rutas"></ul>
+    </header>
+
+    <!-- Sidebar / Bottom-sheet -->
+    <aside class="aside">
+        <div class="aside__grabber" aria-hidden="true"></div>
+        <nav class="tabs" role="tablist" aria-label="Panel lateral">
+            <button class="tab is-active" data-tab="rutas" aria-selected="true">Rutas</button>
+            <button class="tab" data-tab="cercanas" aria-selected="false">Paradas cercanas</button>
+            <button class="tab" data-tab="recorrido" aria-selected="false">Recorrido</button>
+        </nav>
+
+        <section class="tabpanels">
+            <!-- Buscar: reutiliza tu lista e incluirá el panel de itinerario encima -->
+            <div class="tabpanel" id="tab-recorrido" role="tabpanel" aria-labelledby="tab-recorrido-btn">
+                <div id="panel-ruta" class="card card-empty" style="padding:12px">
+                    <strong>Recorrido</strong>
+                </div>
+            </div>
+
+
+
+            <!-- Rutas (misma lista, pero filtrada por pestaña si prefieres) -->
+            <div class="tabpanel is-active" id="tab-rutas" role="tabpanel" aria-labelledby="tab-rutas-btn">
+                <div class="rutas-filter" style="padding: 8px;">
+                    <input id="rutas-search" class="input" type="text" placeholder="Buscar rutas/paradas" />
+                </div>
+                <ul id="lista-rutas-rutas"></ul>
+            </div>
+
+            <!-- Paradas cercanas: se llena con JS usando el índice -->
+            <div class="tabpanel" id="tab-cercanas" role="tabpanel" aria-labelledby="tab-cercanas-btn">
+                <ul id="nearby-stops" class="nearby"></ul>
+            </div>
+            
+        </section>
     </aside>
 
+    <!-- Mapa -->
     <main id="map"></main>
 
-<!-- Carga moderna de Google Maps -->
+    <!-- FABs flotantes -->
+    <div class="fabs">
+        <button id="fab-my-location" class="fab" title="Mi ubicación">📍</button>
+        <button id="fab-set-origin-hint" class="fab" title="Fijar origen (Shift + clic)">⛳</button>
+        <button id="fab-clear-map" class="fab" title="Limpiar">🧹</button>
+    </div>
 
-<script>
-    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: "AIzaSyCl8SfPwcJc8Nl-rmAXhI8G8aPxC56tSJU",
-    v: "weekly",
-    // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-    // Add other bootstrap parameters as needed, using camel case.
-    });
+    <!-- Leyenda -->
+    <div class="legend">
+        <span class="legend__dot legend__dot--walk"></span> Caminar
+        <span class="legend__dot legend__dot--bus"></span> Ruta OMSA
+        <span class="legend__dot legend__dot--me"></span> Mi ubicación
+    </div>
 
-</script>
-
+    <!-- Carga moderna de Google Maps -->
+    <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+            key: "AIzaSyCl8SfPwcJc8Nl-rmAXhI8G8aPxC56tSJU",
+            v: "weekly",
+        });
+    </script>
 </body>
 </html>

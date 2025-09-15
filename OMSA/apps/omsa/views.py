@@ -5,10 +5,17 @@ from .serializers import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+import unicodedata
 # Create your views here.
 
 def user_home(request):
     return render(request, "omsa/userhome.html")
+
+def _normalize(txt: str) -> str:
+    txt = txt or ""
+    txt = unicodedata.normalize("NFD", txt)
+    return "".join(ch for ch in txt if unicodedata.category(ch) != "Mn").lower()
+
 
 class RutaViewSet(viewsets.ModelViewSet):
     queryset = Ruta.objects.all()
@@ -53,18 +60,22 @@ from django.db.models import Q  # 👈 importa Q al inicio
 class BuscarParadasAPIView(APIView):
     """
     GET /api/public/paradas/buscar/?q=texto
-    Devuelve hasta 20 paradas cuyo nombre contenga q (case-insensitive).
+    Devuelve hasta 20 paradas cuyo nombre contenga q, ignorando acentos y mayúsculas.
     """
     def get(self, request):
-        q = request.GET.get("q", "").strip()
+        q = (request.GET.get("q") or "").strip()
         if not q:
             return Response([], status=status.HTTP_200_OK)
 
-        # 👇 corregido: "icontain" -> "icontains", y con indentación correcta
-        paradas = (Parada.objects
-                    .select_related("ruta")
-                    .filter(Q(nombre__icontains=q))
-                    .order_by("nombre")[:20])
+        nq = _normalize(q)
+        qs = (Parada.objects
+                .select_related("ruta")
+                .filter(ruta__activa=True)
+                .only("id", "nombre", "lat", "lon", "_order", "ruta__codigo")
+                .order_by("nombre"))
 
-        data = ParadaPublicSerializer(paradas, many=True).data
+        # Filtramos en Python normalizando acentos y minúsculas
+        filtradas = [p for p in qs if nq in _normalize(p.nombre)]
+        data = ParadaPublicSerializer(filtradas[:20], many=True).data
         return Response(data, status=status.HTTP_200_OK)
+

@@ -25,8 +25,10 @@ class RutaPublicSerializer(serializers.ModelSerializer):
 
 class ParadaPublicSerializer(serializers.ModelSerializer):
     orden = serializers.IntegerField(source="_order", read_only=True)
+    ruta_codigo = serializers.CharField(source="ruta.codigo", read_only=True)
 
     class Meta:
         model = Parada
-        fields = ["id", "nombre", "lat", "lon", "orden"]
+        fields = ["id", "nombre", "lat", "lon", "orden", "ruta_codigo"]
+
 

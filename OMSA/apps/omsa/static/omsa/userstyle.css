@@ -1,75 +1,477 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    height: 100dvh;
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
+    min-height: 0;
+    width: 100dvw;
 }
 
-aside {
-    width: 300px;
-    background: #f5f5f5;
-    border-right: 1px solid #ddd;
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f9;
+    color: #111;
+    margin: 0;
+    padding: 0;
+}
+
+/* en tu CSS */
+#lista-rutas li.parada-item.is-active {
+    background: #e8f0fe;
+    border-left: 3px solid #1a73e8;
+}
+
+
+/* ========== Topbar / Omnibox ========== */
+.topbar {
+    position: relative;
+    z-index: 12;
+    width: 100%;
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #e7e7e9;
+}
+.topbar__inner {
+    display: flex;
+    gap: 10px;
+    align-items: center;       /* antes flex-end → centra verticalmente */
+    padding: 6px 12px;         /* ↓ menos altura para compactar */
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 48px;          /* ↓ altura mínima del header */
+}
+.omnibox {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.omnibox__input .input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Contenedor superior 
+.omnibox {
+    display: flex;          /* si ya lo tienes, no pasa nada 
+    align-items: end;
+    gap: 12px;
+}
+*/
+
+.omnibox__brand {
+    flex: 0 0 340px;        /* = ancho del aside (alineación con columna izquierda) */
+    display: flex;
+    align-items: end;
+}
+
+.omnibox__brand img {
+    height: 44px;
+    width: auto;
+    display: block;
+}
+
+/* Que el bloque del input se estire */
+.omnibox__input {
+    flex: 1 1 auto;
+    min-width: 0;           /* evita overflow del input */
+}
+
+/* El input ya lo tienes al 100%, mantenlo */
+.omnibox__input .input { width: 100%; }
+
+/* Botones de la derecha no se estiran */
+.omnibox__actions { flex: 0 0 auto; }
+
+/* Mini-card de destino (compacta, en FILA) */
+
+/* Banner "Próximo bus" encima del recorrido */
+.trip-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;      /* ya hereda borde/radio de .card/.card-empty */
+    margin: 8px 8px 6px;     /* un poco de aire con el panel de recorrido */
+}
+.trip-banner__icon {
+    display: grid;
+    place-items: center;
+}
+.trip-banner__text {
+    line-height: 1.25;
+    font-size: 14px;
+}
+.trip-banner__mins {
+    margin-left: 6px;
+    font-weight: 600;
+}
+
+
+.card-empty {
+    padding:12px;
+    border: 1px solid #e7e7e9;
+    border-radius: 8px;
+}
+
+.destino-card {
+    margin-left: auto;
+    display: flex;             /* fila compacta */
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;          /* ↓ padding */
+    background: #fff;
+    border: 1px solid #e7e7e9;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.destino-card__title { font-weight: 700; }
+.destino-card__addr  { display: none; } /* oculta dirección para no crecer */
+.destino-card__actions { display: flex; gap: 6px; }
+.btn {
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
+.btn--primary {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* ========== Aside + Tabs ========== */
+.aside {
+    background: #fff;
+    border-right: 1px solid #e7e7e9;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 9px #4448;
-    /*
-    padding: 20px;
-    */
+    overflow: hidden;
+    min-height: 0;
+    z-index: 11;
 }
-
-.aside__top {
-    width: 100%;
-    padding: 20px 20px 0 5px;
-    /*
-    border-bottom: 2px solid #444;
-    */
+.tabs {
+    display: flex;
+    gap: 4px;
+    padding: 8px 8px 0;
+    border-bottom: 1px solid #f0f0f2;
 }
-
-aside h2 {
-    margin-bottom: 15px;
-    font-size: 18px;
+.tab {
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid transparent;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    background: transparent;
 }
-
-#search-box {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    outline: none;
-    width: 100%;
+.tab.is-active {
+    background: #fff;
+    border: 1px solid #e7e7e9;
+    border-bottom-color: #fff;
 }
+.tabpanels {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    display: grid;
+}
+.tabpanel {
+    padding: 8px;
+    overflow: auto;
+    display: none;
+}
+.tabpanel.is-active { display: block; }
 
-#lista-rutas {
+#lista-rutas,
+#lista-rutas-rutas,
+#nearby-stops {
     list-style: none;
+    margin: 0;
+    padding: 0 6px 8px 0;
+}
+#lista-rutas li,
+#lista-rutas-rutas li,
+#nearby-stops li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    white-space: pre-line;
+    word-break: break-word;
+    cursor: pointer;
+}
+#lista-rutas li:last-child,
+#lista-rutas-rutas li:last-child,
+#nearby-stops li:last-child { border-bottom: none; }
+#lista-rutas li:hover,
+#lista-rutas-rutas li:hover,
+#nearby-stops li:hover { background-color: #f6f6f7; }
+
+.empty {
+    padding: 14px;
+    font-size: 14px;
+    opacity: .75;
 }
 
-#lista-rutas li {
-    white-space: pre-line;
-    border-bottom: 1px solid #444;
-    padding-bottom: 5px;
-    padding: 10px;
+#rutas-search {
+    padding: 8px;
+    width: 90%;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+
+/* ========== Mapa ========== */
+main#map {
+    height: 100%;
+    min-height: 0;
+    position: relative;
+}
+#map, #map > div {
+    height: 100% !important;
+}
+
+/* Panel itinerario (se crea vía JS) */
+#panel-ruta {
+    margin: 12px 8px;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    max-height: 42vh;
+    overflow: auto;
+    background: #fff;
+}
+
+/* ========== FABs ========== */
+.fabs {
+    position: fixed;
+    right: 18px;
+    bottom: 135px;              /* ↑ para no tapar controles de Google */
+    display: grid;
+    gap: 8px;
+    z-index: 13;
+}
+.fab {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #e7e7e9;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+    font-size: 20px;
+    line-height: 1;
     cursor: pointer;
 }
 
-#lista-rutas li:hover {
-    background-color: #7773;
+/* ========== Leyenda ========== */
+.legend {
+    position: fixed;
+    left: 345px;
+    bottom: 4px;              /* ↓ vuelve a la parte inferior (desktop) */
+    z-index: 13;
+    background: #fff;
+    border: 1px solid #e7e7e9;
+    border-radius: 10px;
+    padding: 8px 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 12px;
+}
+.legend__dot {
+    display: inline-block;
+    width: 18px;
+    height: 6px;
+    border-radius: 999px;
+    margin-right: 6px;
+}
+.legend__dot--walk { background: #1a73e8; }
+.legend__dot--bus  { background: #2E7D32; }
+.legend__dot--me   { background: #4285F4; }
+
+
+/* InfoWindow compacto (texto + X en la misma línea) */
+.iw2 { padding: 6px 8px; }
+.iw2__row { display: flex; align-items: center; gap: 8px; }
+.iw2__text { font-size: 12px; line-height: 1.25; }
+.iw2__close {
+    border: 0; background: transparent; cursor: pointer;
+    font-size: 16px; line-height: 1; padding: 0 2px; opacity: .7;
+}
+.iw2__close:hover { opacity: 1; }
+
+/* Quita el acolchado grande de la “caja” de Google */
+.gm-style .gm-style-iw-c { padding: 0 !important; }
+
+
+/* ===========================================================
+DESKTOP (≥900px): GRID con sidebar IZQUIERDA y mapa DERECHA
+=========================================================== */
+@media (min-width: 900px) {
+    body {
+        display: grid;
+        grid-template-columns: 340px 1fr;  /* izquierda aside, derecha mapa */
+        grid-template-rows: auto 1fr;      /* header auto (compacto) + contenido */
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .topbar {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        position: sticky;
+        top: 0;
+    }
+
+    .aside {
+        grid-column: 1;
+        grid-row: 2;
+        height: auto;
+        margin-top: 0;
+        width: 340px;
+        border-right: 1px solid #e7e7e9;
+    }
+
+    main#map {
+        grid-column: 2;
+        grid-row: 2;
+        height: auto;
+    }
 }
 
-#lista-rutas li:active {
-    transform: scale(0.9);
+/* ===========================================================
+MÓVIL (<900px): bottom-sheet + Omnibox FULL-WIDTH
+   =========================================================== */
+@media (max-width: 900px) {
+    body {
+        display: block;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    /* Topbar: apilar controles para que el input sea grande */
+    .topbar__inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 8px 12px;     /* cómoda pero compacta */
+        min-height: 0;
+    }
+    .omnibox {
+        grid-template-columns: 1fr; /* input ocupa toda la fila */
+    }
+    .omnibox__input .input {
+        height: 44px;           /* tamaño táctil cómodo */
+        font-size: 16px;
+    }
+    .destino-card {
+        width: 100%;
+        margin-left: 0;
+        flex-wrap: wrap;        /* por si el ancho es muy pequeño */
+        row-gap: 6px;
+    }
+
+    .aside {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 45vh;
+        margin: 0;
+        border-right: none;
+        border-top: 1px solid #e7e7e9;
+        border-radius: 12px 12px 0 0;
+        box-shadow: 0 -6px 24px rgba(0,0,0,.06);
+        background: #fff;
+    }
+    .aside__grabber {
+        width: 44px;
+        height: 4px;
+        background: #ddd;
+        border-radius: 999px;
+        margin: 6px auto 4px;
+    }
+
+    main#map {
+        position: fixed;
+        top: 56px;              /* altura mínima del header */
+        left: 0;
+        right: 0;
+        bottom: 45vh;           /* espacio del bottom-sheet */
+        height: auto;
+    }
+
+    /* FABs y leyenda: por encima del sheet */
+    .fabs {
+        right: 12px;
+        bottom: calc(45vh + 16px);
+    }
+    .legend {
+        left: 12px;
+        bottom: calc(45vh + 16px);
+    }
 }
 
-#lista-rutas li:last-child {
-    border-bottom: none;
+/* <= 480px (opcional) */
+@media (max-width: 480px) {
+    .omnibox__brand {position: relative; max-height: max-content;}
+    .omnibox { gap: 12px; flex-direction: column; }
+    .omnibox__brand { flex-basis: 110px; justify-self: center;;}
+    .omnibox__brand img { height: 40px;}
+    .omnibox__input {width: 100%;}
+    main#map {position: absolute; top: -150px;}
+    .tabs {display: flex; justify-content: space-around;}
+    .destino-card {justify-content: space-between;}
+    .aside { height: 40dvh;}
+    .legend { bottom: calc(40dvh + 16px); left: 8vw};
+}
+
+/* ======== NUEVO: Desktop — 3 columnas exactas (logo · input · acciones) ======== */
+@media (min-width: 900px) {
+    .topbar__inner {
+        max-width: none;   /* deja de centrar el contenido */
+        margin: 0;         /* elimina el auto-centering */
+    }
+    .omnibox {
+        display: grid;
+        grid-template-columns: 340px auto; /* verde · rojo · azul */
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+    .omnibox__brand {
+        justify-content: center;   /* centra el logo en su bloque (columna izquierda) */
+    }
+    .destino-card {
+        margin-right: 30px;
+    }
+    .omnibox__input { min-width: 0; width: 80%; justify-self: center;}
+    .omnibox__actions { justify-self: start; }
+    #map { position: absolute;}
 }
 
 
+/*  QUERY DE FOTOS  */
+/* <= 1200px */
+@media (max-width: 1200px) {
+    .omnibox__brand { flex-basis: 200px; }
+    #map { position: absolute;}
+}
 
-main#map {
-    flex-grow: 1;
+/* <= 992px */
+@media (max-width: 992px) {
+    .omnibox__brand { flex-basis: 170px; }
+    .omnibox__brand img { height: 24px; }
+    main#map { position: absolute;}
+}
+
+/* <= 768px */
+@media (max-width: 768px) {
+    .omnibox { gap: 8px; }
+    .omnibox__brand { flex-basis: 140px; }
+    .omnibox__brand img { height: 22px; }
+    main#map {position: absolute;}
 }
