@@ -16,7 +16,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['onrender.com',"localhost", "127.0.0.1", "192.168.2.6"]  # tu IP LAN real
+ALLOWED_HOSTS = ['.onrender.com',"localhost", "127.0.0.1", "192.168.2.6"]  # tu IP LAN real
 CSRF_TRUSTED_ORIGINS = ["http://192.168.2.6:8000"]
 
 
