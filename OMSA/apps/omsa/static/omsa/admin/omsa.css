@@ -1,0 +1,176 @@
+/* =========================================================
+    OMSA — Admin (Jazzmin) custom styles
+    Ubicación: apps/omsa/static/omsa/admin/omsa.css
+   ========================================================= */
+
+/* ---------- Header / Navbar ---------- */
+/* Poner en negrita el texto de marca del navbar */
+.navbar .brand-text {
+  font-weight: 700 !important;
+}
+
+/* ---------- Dashboard layout ---------- */
+/* Permitir que la fila principal del dashboard envuelva en varias líneas
+   (dos tarjetas arriba y "Acciones recientes" abajo) */
+.dashboard .content .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* La columna que contiene "Acciones recientes" (Jazzmin usa col-lg-3 col-12)
+   → mandarla debajo y hacerla de ancho completo */
+.dashboard .content .row > .col-lg-3.col-12 {
+  order: 99;                          /* manda abajo */
+  flex: 0 0 100% !important;          /* sobreescribe flex-basis de bootstrap */
+  max-width: 100% !important;         /* sobreescribe max-width de bootstrap */
+  width: 100% !important;
+}
+
+/* Asegurar que los contenedores internos usen todo el ancho */
+#content-related,
+#recent-actions-module {
+  width: 100% !important;
+}
+
+/* Centrar el título del módulo “Acciones recientes” */
+#recent-actions-module > h2,
+#recent-actions-module > h4 {
+  text-align: center;
+}
+
+/* ---------- Acciones recientes en HORIZONTAL con scroll ---------- */
+/* Jazzmin renderiza la lista como una "timeline"; la volvemos horizontal */
+
+/* 1) La timeline en una sola fila con scroll-x */
+#recent-actions-module .timeline {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 16px;
+  overflow-x: auto !important;       /* scroll horizontal visible */
+  overflow-y: hidden;
+  padding: 8px 4px 12px;             /* espacio para la barra de scroll */
+  margin: 0;
+  scroll-snap-type: x proximity;     /* deslizamiento suave entre tarjetas */
+  -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
+}
+
+/* 2) Quitar el "poste" vertical de la timeline que fuerza layout vertical */
+#recent-actions-module .timeline::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* 3) Cada bloque (icono + tarjeta) con ancho fijo en la fila */
+#recent-actions-module .timeline > div {
+  flex: 0 0 320px;                    /* ancho de cada tarjeta; ajusta a gusto */
+  scroll-snap-align: start;
+}
+
+/* 4) Estilo de tarjeta (Jazzmin usa .timeline-item dentro del div) */
+#recent-actions-module .timeline .timeline-item {
+  background: #fff;
+  border: 1px solid #e7e7e9;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+/* 5) Estética de la barra de scroll horizontal (visible) */
+#recent-actions-module .timeline {
+  scrollbar-width: auto;             /* Firefox */
+  -ms-overflow-style: auto;          /* IE/Edge antiguo */
+}
+#recent-actions-module .timeline::-webkit-scrollbar {
+  height: 10px;                      /* alto de la barra */
+}
+#recent-actions-module .timeline::-webkit-scrollbar-thumb {
+  background: #c7c7cc;
+  border-radius: 8px;
+}
+#recent-actions-module .timeline::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Línea horizontal que conecta los ítems de "Acciones recientes" */
+#recent-actions-module .timeline {
+  position: relative;
+}
+
+/* La línea horizontal (se dibuja atrás de las tarjetas) */
+#recent-actions-module .timeline::before {
+  content: "";
+  position: absolute;
+  top: 32px;               /* altura aproximada de los iconos */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #dcdcdc;     /* color de la línea, ajusta a gusto */
+  z-index: 0;
+}
+
+/* Asegurar que cada ítem y su ícono estén por encima de la línea */
+#recent-actions-module .timeline > div {
+  position: relative;
+  z-index: 1;
+}
+
+
+.module > .mb-3 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.timeline {
+    gap: 0 !important;
+}
+
+.col-lg-9.col-12 {
+    margin-left: 50px;
+    display: grid;
+    margin-bottom: 20px;
+}
+
+
+
+/*  MEDIA QUERY */
+@media (max-width: 970px) {
+    .col-lg-9.col-12 {
+        margin: 0;
+    }
+}
+    
+
+/*  SIDEBAR */
+.main-sidebar  .brand-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600 !important;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.sidebar .d-block {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.sidebar {
+    font-size: 1rem;
+}
+
+.sidebar p {
+    font-size: inherit;
+}
+
+.mt-2 .nav-header {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.main-header {
+    padding: 12px;
+}
+
+.h4.m-0.pr-3.mr-3.border-right {
+    font-weight: 500;
+}
+
