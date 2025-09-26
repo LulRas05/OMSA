@@ -61,12 +61,15 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'core.urls'
 
 
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOW_CREDENTIALS = True
+# Permitir todos los orígenes por defecto (ideal para la demo/tesis)
+CORS_ALLOW_ALL_ORIGINS = env.bool("CORS_ALLOW_ALL_ORIGINS", default=True)
+CORS_ALLOW_CREDENTIALS = env.bool("CORS_ALLOW_CREDENTIALS", default=True)
 
-CORS_ORIGIN_WHITELIST = env.tuple('CORS_ORIGIN_WHITELIST')
-CORS_ALLOWED_ORIGINS =  env.list('CORS_ALLOWED_ORIGINS')
+# Si quieres restringir, podrás pasar listas por variables de entorno,
+# pero con defaults vacíos NO rompe si no existen
+CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
+CORS_ORIGIN_WHITELIST = env.tuple("CORS_ORIGIN_WHITELIST", default=())
+
 
 TEMPLATES = [
     {
