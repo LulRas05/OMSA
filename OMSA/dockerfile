@@ -1,0 +1,27 @@
+# Imagen base de Python
+FROM python:3.12-slim
+
+# Instala herramientas del sistema y el DRIVER ODBC 18 (necesario para Azure SQL)
+RUN apt-get update && apt-get install -y \
+    curl gnupg2 apt-transport-https unixodbc-dev \
+    && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+    && curl https://packages.microsoft.com/config/debian/12/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+    && apt-get update && ACCEPT_EULA=Y apt-get install -y msodbcsql18 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Directorio de trabajo
+WORKDIR /app
+
+# Instala dependencias de Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia el código
+COPY . .
+
+# (Opcional) Colecta estáticos; si no hay nada, no falla
+RUN python manage.py collectstatic --noinput || true
+
+# Al arrancar el contenedor: aplica migraciones y levanta gunicorn
+# Render expone el puerto en la variable PORT automáticamente
+CMD ["sh", "-c", "python manage.py migrate --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:${PORT} --log-file -"]

@@ -16,7 +16,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOST')
+ALLOWED_HOSTS = ['onrender.com',"localhost", "127.0.0.1", "192.168.2.6"]  # tu IP LAN real
+CSRF_TRUSTED_ORIGINS = ["http://192.168.2.6:8000"]
+
+
+
+#ALLOWED_HOSTS = env.list('ALLOWED_HOST')
 
 DJANGO_APPS = [
     'jazzmin',
@@ -34,10 +39,11 @@ LIBRERIES_APPS = [
     'drf_spectacular',
 ]
 PROJECT_APPS = [
-    'apps.omsa'
+    'apps.omsa.apps.OmsaConfig',
+    'live',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + LIBRERIES_APPS + PROJECT_APPS
+INSTALLED_APPS = DJANGO_APPS + LIBRERIES_APPS + PROJECT_APPS 
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -49,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -84,8 +91,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': os.getenv('DB_NAME', ''),
+        'HOST': os.getenv('DB_HOST', ''),  # debe ser algo como: tu-servidor.database.windows.net
+        'PORT': '1433',
+        'USER': os.getenv('DB_USER', ''),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+        },
     }
 }
 
@@ -115,6 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'America/Santo_Domingo'
+USE_TZ = True
 
 USE_I18N = True
 
@@ -130,6 +145,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
@@ -158,3 +175,5 @@ SIMPLE_JWT = {
 
 JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 JAZZMIN_UI_TWEAKS = JAZZMIN_UI_TWEAKS
+
+

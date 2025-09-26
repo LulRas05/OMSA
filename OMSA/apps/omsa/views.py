@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 import unicodedata
+from rest_framework import viewsets, routers
 # Create your views here.
 
 def user_home(request):
@@ -34,6 +35,12 @@ class RutasPublicAPIView(APIView):
         rutas = Ruta.objects.filter(activa=True).order_by("codigo")
         data = RutaPublicSerializer(rutas, many=True).data
         return Response(data)
+    
+class ReporteViewSet(viewsets.ModelViewSet):
+    queryset = Reporte.objects.select_related("ruta").order_by("-creado_en")
+    serializer_class = ReporteSerializer
+    http_method_names = ["get", "post", "head", "options"]
+
 
 class ParadasPorRutasAPIView(APIView):
     def get(self, request):
@@ -78,4 +85,8 @@ class BuscarParadasAPIView(APIView):
         filtradas = [p for p in qs if nq in _normalize(p.nombre)]
         data = ParadaPublicSerializer(filtradas[:20], many=True).data
         return Response(data, status=status.HTTP_200_OK)
+
+
+
+
 
