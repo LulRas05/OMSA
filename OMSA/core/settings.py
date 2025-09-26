@@ -1,5 +1,6 @@
 from pathlib import Path
 import environ
+from environ import Env
 import os
 from .jazzmin_config import JAZZMIN_SETTINGS, JAZZMIN_UI_TWEAKS
 from datetime import timedelta
@@ -9,15 +10,23 @@ environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+env = Env()
 
+Env.read_env(os.path.join(BASE_DIR, ".env"))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY", default="dev-secret-key-change-me")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = ['.onrender.com',"localhost", "127.0.0.1", "192.168.2.6"]  # tu IP LAN real
-CSRF_TRUSTED_ORIGINS = ["http://192.168.2.6:8000"]
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1"])  # tu IP LAN real
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
+
+RENDER_HOST = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if RENDER_HOST:
+    if RENDER_HOST not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(RENDER_HOST)
+    CSRF_TRUSTED_ORIGINS.append(f"https://{RENDER_HOST}")
 
 
 
@@ -62,13 +71,13 @@ ROOT_URLCONF = 'core.urls'
 
 
 # Permitir todos los orígenes por defecto (ideal para la demo/tesis)
-CORS_ALLOW_ALL_ORIGINS = env.bool("CORS_ALLOW_ALL_ORIGINS", default=True)
-CORS_ALLOW_CREDENTIALS = env.bool("CORS_ALLOW_CREDENTIALS", default=True)
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_CREDENTIALS = True
 
 # Si quieres restringir, podrás pasar listas por variables de entorno,
 # pero con defaults vacíos NO rompe si no existen
 CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
-CORS_ORIGIN_WHITELIST = env.tuple("CORS_ORIGIN_WHITELIST", default=())
+CORS_ORIGIN_WHITELIST = tuple(env.list("CORS_ORIGIN_WHITELIST", default=CORS_ALLOWED_ORIGINS))
 
 
 TEMPLATES = [
@@ -93,15 +102,21 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'mssql',
-        'NAME': os.getenv('DB_NAME', ''),
-        'HOST': os.getenv('DB_HOST', ''),  # debe ser algo como: tu-servidor.database.windows.net
-        'PORT': '1433',
-        'USER': os.getenv('DB_USER', ''),
-        'PASSWORD': os.getenv('DB_PASSWORD', ''),
-        'OPTIONS': {
-            'driver': 'ODBC Driver 18 for SQL Server',
+    "default": {
+        "ENGINE": "mssql",
+        "NAME": env("DB_NAME"),
+        "USER": env("DB_USER"),
+        "PASSWORD": env("DB_PASSWORD"),
+        "HOST": env("DB_HOST"),           # p.ej. myserver.database.windows.net
+        "PORT": env("DB_PORT", default="1433"),
+        "OPTIONS": {
+            "driver": "ODBC Driver 18 for SQL Server",
+            # Si tu servidor usa TLS con certificado público, puedes poner 'no'
+            "Encrypt": "yes",
+            # Mientras configuras certificados/firewall, esto evita fallos por TLS:
+            "TrustServerCertificate": "yes",
+            # Evita timeouts cortos durante el arranque:
+            "Connection Timeout": 30,
         },
     }
 }
