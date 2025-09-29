@@ -1,21 +1,19 @@
-# ---- Base Python ----
 FROM python:3.12-slim
 
-# Evita prompts, buffers y acepta la EULA del driver de SQL Server
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     ACCEPT_EULA=Y \
     MSSQL_CLI_TELEMETRY_OPTOUT=1
 
-# ---- SO + unixODBC ----
+# SO + herramientas + unixODBC
 RUN apt-get update && apt-get install -y \
     curl ca-certificates gnupg2 apt-transport-https \
     build-essential \
     unixodbc unixodbc-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# ---- Repos Microsoft + ODBC Driver 18 ----
+# Repos Microsoft + ODBC Driver 18
 RUN curl -sSLo /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb \
     && dpkg -i /tmp/packages-microsoft-prod.deb \
     && rm /tmp/packages-microsoft-prod.deb \
@@ -23,23 +21,23 @@ RUN curl -sSLo /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/c
     && ACCEPT_EULA=Y apt-get install -y msodbcsql18 odbcinst \
     && rm -rf /var/lib/apt/lists/*
 
-# ---- App ----
+# App
 WORKDIR /app
 
-# Dependencias Python
 COPY requirements.txt .
 RUN python -m pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
-# Código
 COPY . .
 
-# Estáticos (si no hay, no rompe)
-RUN python manage.py collectstatic --noinput || true
+# MUY IMPORTANTE: entrar al folder donde está manage.py
+WORKDIR /app/OMSA/OMSA
 
-# Opcional: ajusta workers/timeouts de gunicorn sin tocar el CMD
+# collectstatic REAL (que falle si algo va mal)
+RUN python manage.py collectstatic --noinput
+
+# Opcional: un poco de aire para gunicorn
 ENV GUNICORN_CMD_ARGS="--workers=2 --threads=2 --timeout=120"
 
-# Render inyecta $PORT. Migramos y arrancamos Gunicorn.
-# Si tu proyecto no se llama "core", cambia "core.wsgi:application".
+# Render inyecta $PORT
 CMD ["sh", "-c", "python manage.py migrate --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:${PORT} --log-file -"]
