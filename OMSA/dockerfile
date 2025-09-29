@@ -24,18 +24,13 @@ RUN curl -sSLo /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/c
 
 # App
 WORKDIR /app
-
 COPY requirements.txt .
 RUN python -m pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
-
 COPY . .
 
-# collectstatic SIN depender de manage.py
-RUN python -m django collectstatic --noinput
-
-# Opcional: darle aire a gunicorn
+# Gunicorn con un poco de aire
 ENV GUNICORN_CMD_ARGS="--workers=2 --threads=2 --timeout=120"
 
-# Render inyecta $PORT. migrate SIN depender de manage.py y arrancar gunicorn.
-CMD ["sh", "-c", "python -m django migrate --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:${PORT} --log-file -"]
+# En runtime ya existen las env vars: primero collectstatic, luego migrate y arrancar
+CMD ["sh", "-c", "python -m django collectstatic --noinput && python -m django migrate --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:${PORT} --log-file -"]
