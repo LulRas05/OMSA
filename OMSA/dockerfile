@@ -31,7 +31,7 @@ RUN python -m pip install --upgrade pip \
 COPY . .
 
 # MUY IMPORTANTE: entrar al folder donde está manage.py
-WORKDIR /app/OMSA/OMSA
+WORKDIR /OMSA/OMSA
 
 # collectstatic REAL (que falle si algo va mal)
 RUN python manage.py collectstatic --noinput
