@@ -4,16 +4,17 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     ACCEPT_EULA=Y \
-    MSSQL_CLI_TELEMETRY_OPTOUT=1
+    MSSQL_CLI_TELEMETRY_OPTOUT=1 \
+    DJANGO_SETTINGS_MODULE=core.settings
 
-# SO + herramientas + unixODBC
+# SO + unixODBC
 RUN apt-get update && apt-get install -y \
     curl ca-certificates gnupg2 apt-transport-https \
     build-essential \
     unixodbc unixodbc-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Repos Microsoft + ODBC Driver 18
+# Repos MS + ODBC Driver 18
 RUN curl -sSLo /tmp/packages-microsoft-prod.deb https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb \
     && dpkg -i /tmp/packages-microsoft-prod.deb \
     && rm /tmp/packages-microsoft-prod.deb \
@@ -30,14 +31,11 @@ RUN python -m pip install --upgrade pip \
 
 COPY . .
 
-# MUY IMPORTANTE: entrar al folder donde está manage.py
-WORKDIR /OMSA/OMSA
+# collectstatic SIN depender de manage.py
+RUN python -m django collectstatic --noinput
 
-# collectstatic REAL (que falle si algo va mal)
-RUN python manage.py collectstatic --noinput
-
-# Opcional: un poco de aire para gunicorn
+# Opcional: darle aire a gunicorn
 ENV GUNICORN_CMD_ARGS="--workers=2 --threads=2 --timeout=120"
 
-# Render inyecta $PORT
-CMD ["sh", "-c", "python manage.py migrate --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:${PORT} --log-file -"]
+# Render inyecta $PORT. migrate SIN depender de manage.py y arrancar gunicorn.
+CMD ["sh", "-c", "python -m django migrate --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:${PORT} --log-file -"]
