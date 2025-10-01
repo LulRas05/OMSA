@@ -35,7 +35,7 @@ RUN python -m pip install --upgrade pip \
 COPY . .
 
 # Estáticos (si no hay, no rompe)
-RUN python manage.py collectstatic --noinput || true
+RUN python manage.py collectstatic --noinput --clear
 
 # Opcional: ajusta workers/timeouts de gunicorn sin tocar el CMD
 ENV GUNICORN_CMD_ARGS="--workers=2 --threads=2 --timeout=120"
