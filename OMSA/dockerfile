@@ -34,12 +34,11 @@ RUN python -m pip install --upgrade pip \
 # Código
 COPY . .
 
-# Estáticos (si no hay, no rompe)
+# Estáticos - ahora funcionará con los defaults en settings.py
 RUN python manage.py collectstatic --noinput --clear
 
 # Opcional: ajusta workers/timeouts de gunicorn sin tocar el CMD
 ENV GUNICORN_CMD_ARGS="--workers=2 --threads=2 --timeout=120"
 
 # Render inyecta $PORT. Migramos y arrancamos Gunicorn.
-# Si tu proyecto no se llama "core", cambia "core.wsgi:application".
 CMD ["sh", "-c", "python manage.py migrate --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:${PORT} --log-file -"]
