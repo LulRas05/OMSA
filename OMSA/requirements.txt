@@ -13,11 +13,18 @@ django-storages==1.13.1
 djangorestframework==3.14.0
 djangorestframework_simplejwt==5.5.0
 drf-spectacular==0.28.0
+gunicorn==23.0.0
 inflection==0.5.1
 jsonschema==4.24.0
 jsonschema-specifications==2025.4.1
+<<<<<<< HEAD
+=======
+mssql-django==1.6
+packaging==25.0
+>>>>>>> 187b2311a404a21a00b1429d7e3a6a210ee56e42
 pillow==11.3.0
 PyJWT==2.9.0
+pyodbc==5.2.0
 pytz==2025.2
 PyYAML==6.0.2
 referencing==0.36.2
@@ -26,3 +33,7 @@ sqlparse==0.5.3
 typing_extensions==4.13.2
 tzdata==2025.2
 uritemplate==4.1.1
+<<<<<<< HEAD
+=======
+whitenoise==6.11.0
+>>>>>>> 187b2311a404a21a00b1429d7e3a6a210ee56e42

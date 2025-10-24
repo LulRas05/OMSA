@@ -1,0 +1,2 @@
+/* Quita los links del widget clásico */
+.clockbox, .datetimeshortcuts { display: none !important; }
