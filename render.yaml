@@ -8,6 +8,7 @@ services:
       cd OMSA
       python manage.py collectstatic --noinput
       python manage.py migrate --noinput
+      python manage.py createsuperuser --noinput || true
     startCommand: cd OMSA && gunicorn core.wsgi:application --preload
     envVars:
       - key: SECRET_KEY
