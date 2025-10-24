@@ -566,3 +566,76 @@ MÓVIL (<900px): bottom-sheet + Omnibox FULL-WIDTH
 .omsa-viewer .btn-share-trip {
     display: none !important;
 }
+
+
+
+/* ===== MAPA A PANTALLA COMPLETA SIN SCROLL DE LA PÁGINA ===== */
+:root{
+    /* Altura de offset para UI superior (barra búsqueda/logo):
+       suma el notch de iOS + ~92px de tu UI */
+    --map-ui-top-offset: calc(env(safe-area-inset-top, 0px) + 92px);
+    /* Offset inferior para la barra de tabs/bottom sheet */
+    --map-ui-bottom-offset: calc(env(safe-area-inset-bottom, 0px) + 90px);
+}
+
+html, body{
+    height: 100%;
+    overflow: hidden;                 /* evita que se mueva toda la página */
+    overscroll-behavior: none;
+}
+
+/* Anula cualquier “top: -150px” previo y ancla el mapa */
+main#map{
+    position: fixed !important;       /* el mapa no se mueve con el scroll */
+    inset: 0 !important;              /* top/right/bottom/left = 0 */
+    height: 100dvh !important;        /* altura real del viewport móvil */
+    transform: translateY(0) !important;
+}
+
+/* Asegurar que el contenedor interno de Google herede altura */
+#map, #map > div{
+    height: 100% !important;
+}
+
+/* Coloca la UI superior encima del mapa con espacio seguro */
+.topbar,
+.header,
+.omnibox,
+.search-wrapper{
+    position: fixed !important;
+    top: max(env(safe-area-inset-top, 0px), 8px);
+    left: 0;
+    right: 0;
+    z-index: 30;                       /* por encima del mapa */
+    pointer-events: auto;
+}
+
+/* Si tu barra grande necesita estar más abajo, usa el offset: */
+.omnibox, .search-wrapper{
+    top: var(--map-ui-top-offset) !important;
+}
+
+/* Tabs/bottom: que no empujen el documento, solo flotan encima */
+.tabs, .bottom-bar, .bottom-sheet{
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom: var(--map-ui-bottom-offset) !important;
+    z-index: 30;
+    pointer-events: auto;
+}
+
+/* (Opcional) Si usas una leyenda/ley de colores encima del mapa */
+.legend, .leyenda{
+    position: fixed !important;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(var(--map-ui-bottom-offset) + 52px) !important;
+    z-index: 25;
+}
+
+/* Botones flotantes del mapa que se iban detrás de la UI */
+.fab, .map-buttons, .gm-bundled-control-on-bottom{
+    z-index: 35 !important;
+}
+
