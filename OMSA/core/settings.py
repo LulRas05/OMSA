@@ -101,8 +101,13 @@ DATABASES = {
     )
 }
 DATABASES['default']['CONN_MAX_AGE'] = 600
-# Render Postgres requiere SSL
-DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
+
+# Solo forzar SSL si estamos en PostgreSQL
+engine = DATABASES['default'].get('ENGINE', '')
+if 'postgresql' in engine or 'postgis' in engine:
+    DATABASES['default'].setdefault('OPTIONS', {})
+    DATABASES['default']['OPTIONS']['sslmode'] = 'require'
+
 
 
 
