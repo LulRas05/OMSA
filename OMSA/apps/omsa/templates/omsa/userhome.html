@@ -5,10 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa con Aside</title>
-    <link rel="stylesheet" href="{% static 'omsa/userstyle.css' %}?v=20250915-8">
-    <script src="{% static 'omsa/usermap.js' %}?v=20250915-geo27" defer></script>
+    <link rel="icon" href="{% static '/images/omsa-ico.png' %}">
+    <link rel="stylesheet" href="{% static 'omsa/userstyle.css' %}?v=20250925-06">
+    <script>
+        window.OMSA_PUBLIC_ORIGIN = "http://192.168.2.6:8000";
+        window.OMSA_FORCE_WA = true;
+        window.OMSA_LIVE_BASE = "/api/public/live";
+    </script>
+
+    <script src="{% static 'omsa/usermap.js' %}?v=20250925-09" defer></script>
 </head>
-<body>
+<body data-live-base="/api/public/live">
     <!-- Barra superior (Omnibox + selector de modo) -->
     <header class="topbar">
         <div class="topbar__inner">
@@ -39,6 +46,8 @@
             <button class="tab is-active" data-tab="rutas" aria-selected="true">Rutas</button>
             <button class="tab" data-tab="cercanas" aria-selected="false">Paradas cercanas</button>
             <button class="tab" data-tab="recorrido" aria-selected="false">Recorrido</button>
+            <button id="tab-reportes-btn" class="tab" data-tab="reportes" aria-selected="false"style="display:none;">Reportes</button>
+
         </nav>
 
         <section class="tabpanels">
@@ -48,8 +57,6 @@
                     <strong>Recorrido</strong>
                 </div>
             </div>
-
-
 
             <!-- Rutas (misma lista, pero filtrada por pestaña si prefieres) -->
             <div class="tabpanel is-active" id="tab-rutas" role="tabpanel" aria-labelledby="tab-rutas-btn">
@@ -63,7 +70,44 @@
             <div class="tabpanel" id="tab-cercanas" role="tabpanel" aria-labelledby="tab-cercanas-btn">
                 <ul id="nearby-stops" class="nearby"></ul>
             </div>
-            
+
+            <div class="tabpanel" id="tab-reportes" role="tabpanel" aria-labelledby="tab-reportes-btn" style="display:none;">
+                <div id="panel-reportes" class="card card-empty" style="padding:12px">
+                    <strong>Reportes</strong>
+                    <p id="reportes-placeholder" class="muted" style="margin-top:6px;">
+                        Fija un destino para poder enviar un reporte.
+                    </p>
+
+                    <!-- Aquí irá el formulario en la Subtarea 2 -->
+                    <div id="reportes-form-wrap" style="display:none;">
+                        <div class="reportes-row" style="margin-top:8px">
+                            <label class="label" for="reporte-tipo" style="display:block;margin-bottom:4px">Tipo de reporte</label>
+                            <select id="reporte-tipo" class="input" style="width:100%; padding: 8px;">
+                                <option value="">— Selecciona —</option>
+                                <option value="robo">Robo</option>
+                                <option value="objeto_perdido">Objeto perdido</option>
+                                <option value="conduccion_temeraria">Conducción temeraria</option>
+                                <option value="sugerencia">Sugerencias</option>
+                            </select>
+                        </div>
+
+                        <div class="reportes-row" style="margin-top:10px">
+                            <label class="label" for="reporte-texto" style="display:block;margin-bottom:4px">
+                                Descripción <span class="muted">(máx. 40 caracteres)</span>
+                            </label>
+                            <textarea id="reporte-texto" rows="3" class="input" maxlength="40" placeholder="..." style="width:100%"></textarea>
+                            <div class="help" id="reporte-help" style="opacity:.75;margin-top:4px">
+                                <span id="reporte-cont">0</span>/40
+                            </div>
+                        </div>
+
+                        <div class="reportes-row" style="margin-top:10px;display:flex;gap:8px;align-items:center">
+                            <button id="reporte-enviar" class="btn btn--primary" disabled>Enviar</button>
+                            <span id="reporte-msg" class="muted" aria-live="polite"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </aside>
 

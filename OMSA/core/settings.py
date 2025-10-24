@@ -16,7 +16,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOST')
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.2.6", ".onrender.com"]
+CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com"]
+
+
+#ALLOWED_HOSTS = env.list('ALLOWED_HOST')
 
 DJANGO_APPS = [
     'jazzmin',
@@ -34,14 +38,16 @@ LIBRERIES_APPS = [
     'drf_spectacular',
 ]
 PROJECT_APPS = [
-    'apps.omsa'
+    'apps.omsa.apps.OmsaConfig',
+    'live',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + LIBRERIES_APPS + PROJECT_APPS
+INSTALLED_APPS = DJANGO_APPS + LIBRERIES_APPS + PROJECT_APPS 
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',  
     'django.middleware.common.CommonMiddleware',
@@ -83,11 +89,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': env.db(
+        'DATABASE_URL',
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
+    )
 }
+DATABASES['default']['CONN_MAX_AGE'] = 600
+# Render Postgres requiere SSL
+DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
+
 
 
 # Password validation
@@ -115,6 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'America/Santo_Domingo'
+USE_TZ = True
 
 USE_I18N = True
 
@@ -134,6 +145,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 
 # Default primary key field type
@@ -158,3 +176,5 @@ SIMPLE_JWT = {
 
 JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 JAZZMIN_UI_TWEAKS = JAZZMIN_UI_TWEAKS
+
+

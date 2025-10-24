@@ -105,6 +105,15 @@ JAZZMIN_SETTINGS = {
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
         "omsa.Rutas": "fas fa-users",
+        "omsa.Autobus": "fa-solid fa-bus-simple",
+        "omsa.Parada": "fas fa-map-marker-alt",
+        "omsa.Ruta": "fas fa-route",           
+        "omsa.Turno": "far fa-clock",
+        "omsa.ServiciosDiarios": "fas fa-clipboard-check",
+        "omsa.HistorialServicios": "fas fa-history",
+        "omsa.Chofer": "fas fa-id-card",
+        "omsa.Reporte": "fa-solid fa-bullhorn",
+        "omsa.CalificacionRuta": "fa-solid fa-star"
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
@@ -120,7 +129,7 @@ JAZZMIN_SETTINGS = {
     # UI Tweaks #
     #############
     # Relative paths to custom CSS/JS scripts (must be present in static files)
-    "custom_css": None,
+    "custom_css": "omsa/admin/omsa.css",
     "custom_js": None,
     # Whether to link font from fonts.googleapis.com (use custom_css to supply font otherwise)
     "use_google_fonts_cdn": True,
