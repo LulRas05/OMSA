@@ -60,9 +60,14 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'core.urls'
 
 
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOW_CREDENTIALS = True
+# CORS: no obligamos variables; por defecto permitimos solo *.onrender.com vía regex
+CORS_ALLOW_ALL_ORIGINS = env.bool("CORS_ALLOW_ALL_ORIGINS", default=False)
+CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])  # ej: ["https://mi-frontend.com"]
+CORS_ALLOWED_ORIGIN_REGEXES = env.list(
+    "CORS_ALLOWED_ORIGIN_REGEXES",
+    default=[r"^https://.*\.onrender\.com$"]
+)
+
 
 CORS_ORIGIN_WHITELIST = env.tuple('CORS_ORIGIN_WHITELIST')
 CORS_ALLOWED_ORIGINS =  env.list('CORS_ALLOWED_ORIGINS')
