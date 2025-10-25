@@ -515,7 +515,7 @@ MÓVIL (<900px): bottom-sheet + Omnibox FULL-WIDTH
     .aside { height: var(--sheet-h); }
     .legend { bottom: calc(var(--sheet-h) + 16px); left: 8vw; }
     .fabs {
-        z-index: 1; position: fixed;
+        z-index: 1; position: fixed; bottom: 150px;
     }
 }
 
